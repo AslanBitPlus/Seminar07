@@ -34,11 +34,10 @@ void PrintIntMatrix(int[,] array)
 int SumDiagonalMatrix(int[,] matrix)
 {
     int result = 0;
-    int maxSize = matrix.GetLength(0);
-    if (matrix.GetLength(0) < matrix.GetLength(1)) maxSize = matrix.GetLength(0); 
-    else maxSize = matrix.GetLength(1);
+    // int maxSize = matrix.GetLength(0);
+    // if (matrix.GetLength(1) < maxSize) maxSize = matrix.GetLength(1);
 
-    for (int i = 0; i < maxSize; i ++)
+    for (int i = 0; i < matrix.GetLength(0) && i < matrix.GetLength(1); i ++)
     {
         result += matrix[i, i];
     }
