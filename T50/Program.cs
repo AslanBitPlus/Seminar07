@@ -7,14 +7,15 @@
 // 17 -> такого числа в массиве нет
 
 // Создание двумерного массива заполненного случайными числами
-int[,] CreateMatrixRndInt(int rows, int columns)
+int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
     int[,] matrix = new int[rows, columns];
+    Random rnd = new Random();
     for (int i = 0; i < matrix.GetLength(0); i ++)
     {
         for (int j = 0; j < matrix.GetLength(1); j ++)
         {
-            matrix[i, j] = i + j;
+            matrix[i, j] = rnd.Next(min, max + 1);
         }
     }
     return matrix;
@@ -35,7 +36,7 @@ void PrintIntMatrix(int[,] array)
 
 // =======================
 
-int[,] rndMatrix = CreateMatrixRndInt(3, 4);
+int[,] rndMatrix = CreateMatrixRndInt(3, 4, -9, 9);
 PrintIntMatrix(rndMatrix);
 
 Console.Write("Введите индекс строки: ");
