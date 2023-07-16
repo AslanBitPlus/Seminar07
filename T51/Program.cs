@@ -50,4 +50,4 @@ int[,] rndMatrix = CreateMatrixRndInt(7, 4, -9, 9);
 PrintIntMatrix(rndMatrix);
 Console.WriteLine();
 int sumDiagonal = SumDiagonalMatrix(rndMatrix);
-Console.WriteLine($"Сумма элементов главной диагонали равен: {sumDiagonal}");
+Console.WriteLine($"Сумма элементов главной диагонали: {sumDiagonal}");
