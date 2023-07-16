@@ -34,7 +34,11 @@ void PrintIntMatrix(int[,] array)
 int SumDiagonalMatrix(int[,] matrix)
 {
     int result = 0;
-    for (int i = 0; i < matrix.GetLength(0); i ++)
+    int maxSize = matrix.GetLength(0);
+    if (matrix.GetLength(0) < matrix.GetLength(1)) maxSize = matrix.GetLength(0); 
+    else maxSize = matrix.GetLength(1);
+
+    for (int i = 0; i < maxSize; i ++)
     {
         result += matrix[i, i];
     }
@@ -43,7 +47,7 @@ int SumDiagonalMatrix(int[,] matrix)
 
 // =======================
 
-int[,] rndMatrix = CreateMatrixRndInt(3, 4, -9, 9);
+int[,] rndMatrix = CreateMatrixRndInt(7, 4, -9, 9);
 PrintIntMatrix(rndMatrix);
 Console.WriteLine();
 int sumDiagonal = SumDiagonalMatrix(rndMatrix);
